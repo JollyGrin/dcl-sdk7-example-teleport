@@ -29,7 +29,7 @@ const transportSystem = () => {
 
   const teleports = engine.getEntitiesWith(Teleport)
   for (const [entity] of teleports) {
-    const boxPosition = Transform.getMutable(entity).position
+    const boxPosition = Transform.get(entity).position
     const playerPosition = Transform.get(engine.PlayerEntity).position
 
     const canTeleport = isPlayerNearBox(playerPosition, boxPosition, 1)
